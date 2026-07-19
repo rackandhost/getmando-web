@@ -20,7 +20,10 @@ const { repositoryUrl } = siteCopy;
 <main><slot /></main>
 <footer class="site-footer">
   <div class="container footer__inner">
-    <Logo compact />
+    <div class="footer__logo-container">
+      <Logo compact />
+      <p><small><small>powered by <a href="https://rackandhost.com" target="_blank">Rack&Host</a></small> | GPL-3.0</small></p>
+    </div>
     <a class="icon-link" href={repositoryUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub repository (opens in a new tab)"><Icon name="github" /></a>
   </div>
 </footer>
