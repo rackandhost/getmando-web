@@ -24,12 +24,13 @@ h1, h2, h3, p { margin-top: 0; } h1 { font-size: clamp(2.5rem, 8vw, 5rem); max-w
 .hero__image { display: block; width: 100%; height: auto; border: 1px solid #ffffff2e; border-radius: .8rem; box-shadow: 0 1.5rem 4rem #0008; }
 .theme-screenshot__controls { display: flex; gap: .5rem; justify-content: flex-end; margin-bottom: .75rem; } .theme-screenshot button { border: 1px solid #ffffff3d; border-radius: .45rem; background: transparent; color: inherit; cursor: pointer; padding: .4rem .7rem; } .theme-screenshot button[aria-pressed="true"] { background: #d5f035; color: #111b04; }
 .section { padding-block: 3.5rem; } .section + .section { border-top: 1px solid #ffffff1f; }
-.card-grid { display: grid; gap: 1rem; } .card, .release-card { border: 1px solid #ffffff1f; border-radius: .75rem; background: #ffffff0a; padding: 1.25rem; } .card p { color: #cad8eb; margin-bottom: 0; }
+.card-grid { display: grid; gap: 1rem; } .card, .release-card { border: 1px solid #ffffff1f; border-radius: .75rem; background: #ffffff0a; padding: 1.25rem; width: 100%; } .card p { color: #cad8eb; margin-bottom: 0; }
 .steps { display: grid; gap: 1.25rem; padding-left: 1.4rem; } .steps h2 { font-size: 1.25rem; letter-spacing: 0; margin-bottom: .25rem; }
 pre { overflow-x: auto; padding: 1rem; border-radius: .75rem; background: #030914; border: 1px solid #ffffff1f; color: #d5f035; }
 .release-card__version { color: #d5f035; font-weight: 800; font-size: 1.2rem; }
 .prose h2 { margin-top: 2rem; font-size: 1.5rem; letter-spacing: -.02em; } .prose p, .prose li { color: #cad8eb; }
 .release-detail h1 { max-width: none; }
+.releases-container { display: flex; align-items: center; gap: 1rem; flex-direction: column; }
 .config-sections { color: #cad8eb; padding-left: 1.25rem; }
 .site-footer { border-top: 1px solid #ffffff1f; margin-top: 2rem; color: #cad8eb; }
 .icon-link { display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; color: #cad8eb; } .icon-link svg { width: 1.45rem; height: 1.45rem; } .icon-link:hover { color: #fff; } .icon-link:focus-visible { outline: 3px solid #8bc7ff; outline-offset: 4px; }

@@ -12,6 +12,7 @@ const dateFormatter = new Intl.DateTimeFormat('en', { dateStyle: 'long', timeZon
 <BaseLayout title="Release articles | getMando" description="Editorial release articles for getMando, with GitHub as the authoritative release record." path="/releases/">
   <Section eyebrow="Release information" title="What changed" headingLevel="h1">
     <p class="lede">Read the story behind each getMando release, then follow the link in each article for the authoritative GitHub record.</p>
+    <div class="releases-container">
     {releases.map((release) => (
       <article class="release-card">
         <p class="release-card__version">{release.data.version}</p>
@@ -21,5 +22,6 @@ const dateFormatter = new Intl.DateTimeFormat('en', { dateStyle: 'long', timeZon
         <a class="text-link" href={`/releases/${release.data.slug}/`}>Read the release article</a>
       </article>
     ))}
+    </div>
   </Section>
 </BaseLayout>
