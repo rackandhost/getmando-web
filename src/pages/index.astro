@@ -1,0 +1,35 @@
+---
+import Section from '../components/Section.astro';
+import Icon from '../components/Icon.astro';
+import ThemeScreenshot from '../components/ThemeScreenshot.astro';
+import { siteCopy } from '../data/site-copy';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const { landing, documentationUrl, repositoryUrl } = siteCopy;
+---
+
+<BaseLayout title={`${landing.title} | getMando`} description={landing.description} path="/">
+  <section class="hero container">
+    <div class="hero__content">
+      <p class="eyebrow">{landing.eyebrow}</p>
+      <h1>{landing.title}</h1>
+      <p class="lede">{landing.description}</p>
+      <div class="actions">
+        <a class="button button--primary" href={documentationUrl} target="_blank" rel="noopener noreferrer" aria-label="Read documentation (opens in a new tab)"><Icon name="documentation" /><span>{landing.primaryAction}</span></a>
+        <a class="button button--quiet" href={repositoryUrl} target="_blank" rel="noopener noreferrer" aria-label="View getMando on GitHub (opens in a new tab)"><Icon name="github" /><span>View on GitHub</span></a>
+      </div>
+    </div>
+    <ThemeScreenshot />
+  </section>
+  <Section eyebrow="Why getMando" title="A dashboard with room to breathe">
+    <div class="card-grid">
+      {landing.benefits.map(([title, description]) => (
+        <article class="card"><h3>{title}</h3><p>{description}</p></article>
+      ))}
+    </div>
+  </Section>
+  <Section title="Ready to make it yours?">
+    <p>If getMando helps your homelab, a GitHub star helps more people discover it.</p>
+    <div class="actions"><a class="button button--primary" href={repositoryUrl} target="_blank" rel="noopener noreferrer" aria-label="Star getMando on GitHub (opens in a new tab)"><Icon name="star" /><span>Star on GitHub</span></a></div>
+  </Section>
+</BaseLayout>

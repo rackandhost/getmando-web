@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+import SiteShell from '../components/SiteShell.astro';
+
+type RoutePath = '/' | '/releases/' | `/releases/${string}/`;
+
+const { title, description, path, spanishPath } = Astro.props as {
+  title: string;
+  description: string;
+  path: RoutePath;
+  spanishPath?: string;
+};
+const canonical = new URL(path, Astro.site);
+const spanishUrl = spanishPath ? new URL(spanishPath, Astro.site) : undefined;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <link rel="icon" type="image/x-icon" href="/mando.png" />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={canonical} />
+    {spanishUrl && <link rel="alternate" hreflang="es" href={spanishUrl} />}
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <SiteShell spanishPath={spanishPath}>
+      <div id="main-content"><slot /></div>
+    </SiteShell>
+  </body>
+</html>

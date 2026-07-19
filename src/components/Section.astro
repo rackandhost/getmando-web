@@ -1,0 +1,10 @@
+---
+const { eyebrow, title, headingLevel = 'h2' } = Astro.props;
+const Heading = headingLevel;
+---
+
+<section class="section container">
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  {title && <Heading>{title}</Heading>}
+  <slot />
+</section>

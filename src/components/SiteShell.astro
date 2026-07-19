@@ -1,0 +1,26 @@
+---
+import { siteCopy } from '../data/site-copy';
+import Icon from './Icon.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import Logo from './Logo.astro';
+
+const { spanishPath } = Astro.props;
+const { repositoryUrl } = siteCopy;
+---
+
+<header class="site-header">
+  <nav class="container nav" aria-label="Primary navigation">
+    <Logo compact />
+    <div class="nav__links">
+      <a class="nav-link" href="/releases/"><Icon name="release" /><span>Releases</span></a>
+      {spanishPath && <LanguageSwitcher spanishPath={spanishPath} />}
+    </div>
+  </nav>
+</header>
+<main><slot /></main>
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <Logo compact />
+    <a class="icon-link" href={repositoryUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub repository (opens in a new tab)"><Icon name="github" /></a>
+  </div>
+</footer>
