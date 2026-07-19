@@ -1,0 +1,41 @@
+---
+import darkScreenshot from '../assets/dashboard.png';
+import lightScreenshot from '../assets/dashboard-light.png';
+
+const darkAlt = 'A dark getMando dashboard showing organized self-hosted application cards.';
+const lightAlt = 'A light getMando dashboard showing organized self-hosted application cards.';
+---
+
+<div class="theme-screenshot" data-theme-selector>
+  <div class="theme-screenshot__controls" aria-label="Dashboard theme" role="group">
+    <button type="button" data-theme-button data-theme="dark" aria-pressed="false">Dark</button>
+    <button type="button" data-theme-button data-theme="light" aria-pressed="true">Light</button>
+  </div>
+  <img
+    id="dashboard-preview"
+    class="hero__image"
+    data-theme-image
+    data-dark-src={darkScreenshot.src}
+    data-dark-alt={darkAlt}
+    data-light-src={lightScreenshot.src}
+    data-light-alt={lightAlt}
+    src={lightScreenshot.src}
+    width={lightScreenshot.width}
+    height={lightScreenshot.height}
+    alt={lightAlt}
+  />
+</div>
+
+<script is:inline>
+  const selector = document.querySelector('[data-theme-selector]');
+  if (selector) {
+    const image = selector.querySelector('[data-theme-image]');
+    const buttons = selector.querySelectorAll('[data-theme-button]');
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      const theme = button.dataset.theme;
+      image.src = image.dataset[`${theme}Src`];
+      image.alt = image.dataset[`${theme}Alt`];
+      buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+    }));
+  }
+</script>

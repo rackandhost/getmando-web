@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import Section from '../../components/Section.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const getStaticPaths = (async () => {
+  const releases = (await getCollection('releases')).sort((a, b) =>
+    b.data.publishedAt.localeCompare(a.data.publishedAt),
+  );
+  return releases.map((release) => ({ params: { slug: release.data.slug }, props: { release } }));
+}) satisfies GetStaticPaths;
+
+const { release } = Astro.props;
+const { Content } = await render(release);
+const dateFormatter = new Intl.DateTimeFormat('en', { dateStyle: 'long', timeZone: 'UTC' });
+---
+
+<BaseLayout title={`${release.data.title} | getMando`} description={release.data.description} path={`/releases/${release.data.slug}/`}>
+  <div class="release-detail">
+    <Section eyebrow={release.data.version} title={release.data.title} headingLevel="h1">
+      <time datetime={release.data.publishedAt}>{dateFormatter.format(new Date(`${release.data.publishedAt}T00:00:00Z`))}</time>
+      <p class="lede">{release.data.description}</p>
+      <article class="prose"><Content /></article>
+      <p><a class="text-link" href={release.data.githubReleaseUrl} target="_blank" rel="noopener noreferrer" aria-label={`Read the complete ${release.data.version} release on GitHub (opens in a new tab)`}>Read the complete release on GitHub</a></p>
+    </Section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,40 @@
+schema: spec-driven
+
+context: |
+  Project: getmando-web; repository is not initialized as Git and contains no application source yet.
+  Stack: undetected; no package, module, build, lint, type-check, or test configuration was found.
+  Architecture: undetected; preserve decisions in proposals and designs once source exists.
+  Testing: no test runner detected; Strict TDD is disabled until a runner is added.
+  Style: technical SDD artifacts are written in English.
+
+strict_tdd: false
+
+testing:
+  runner: null
+  framework: null
+  unit: null
+  integration: null
+  e2e: null
+  coverage: null
+  linter: null
+  type_checker: null
+  formatter: null
+
+rules:
+  proposal:
+    - Include rollback plans for risky changes.
+  specs:
+    - Use Given/When/Then scenarios and RFC 2119 keywords.
+  design:
+    - Document architecture decisions with rationale.
+  tasks:
+    - Group tasks by phase and keep them completable in one session.
+  apply:
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: ""
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas.

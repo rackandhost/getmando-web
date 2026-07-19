@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getmando.rackandhost.com/sitemap-index.xml

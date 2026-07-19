@@ -1,0 +1,10 @@
+---
+import logo from '../assets/mando.png';
+
+const { compact = false } = Astro.props;
+---
+
+<a class:list={['brand', { 'brand--compact': compact }]} href="/" aria-label="getMando home">
+  <img src={logo.src} width={logo.width} height={logo.height} alt="" />
+  <span>getMando</span>
+</a>
