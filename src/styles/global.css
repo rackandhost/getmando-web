@@ -31,6 +31,7 @@ pre { overflow-x: auto; padding: 1rem; border-radius: .75rem; background: #03091
 .release-card__version { color: #d5f035; font-weight: 800; font-size: 1.2rem; }
 .prose h2 { margin-top: 2rem; font-size: 1.5rem; letter-spacing: -.02em; } .prose p, .prose li { color: #cad8eb; }
 .prose img { display: block; width: 100%; height: auto; margin-block: 1.5rem; border: 1px solid #ffffff2e; border-radius: .8rem; box-shadow: 0 1.5rem 4rem #0008; }
+.prose blockquote { margin: 1.5rem 0; padding: 1rem 1.25rem; border-left: 4px solid #f0b429; border-radius: .4rem; background: #f0b4291a; } .prose blockquote > :last-child { margin-bottom: 0; } .prose blockquote pre { margin-block: 1rem; } .prose blockquote pre + p { margin-top: 1rem; }
 .release-detail h1 { max-width: none; }
 .releases-container { display: flex; align-items: center; gap: 1rem; flex-direction: column; }
 .config-sections { color: #cad8eb; padding-left: 1.25rem; }
