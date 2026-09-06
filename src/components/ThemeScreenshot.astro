@@ -1,15 +1,18 @@
 ---
 import darkScreenshot from '../assets/dashboard.png';
 import lightScreenshot from '../assets/dashboard-light.png';
+import configuratorScreenshot from '../assets/configurator.png';
 
 const darkAlt = 'A dark getMando dashboard showing organized self-hosted application cards.';
 const lightAlt = 'A light getMando dashboard showing organized self-hosted application cards.';
+const configuratorAlt = 'The getMando configurator screen for customizing your self-hosted dashboard.';
 ---
 
 <div class="theme-screenshot" data-theme-selector>
-  <div class="theme-screenshot__controls" aria-label="Dashboard theme" role="group">
+  <div class="theme-screenshot__controls" aria-label="Dashboard preview" role="group">
     <button type="button" data-theme-button data-theme="dark" aria-pressed="false">Dark</button>
     <button type="button" data-theme-button data-theme="light" aria-pressed="true">Light</button>
+    <button type="button" data-theme-button data-theme="configurator" aria-pressed="false">Configurator</button>
   </div>
   <img
     id="dashboard-preview"
@@ -17,8 +20,16 @@ const lightAlt = 'A light getMando dashboard showing organized self-hosted appli
     data-theme-image
     data-dark-src={darkScreenshot.src}
     data-dark-alt={darkAlt}
+    data-dark-width={darkScreenshot.width}
+    data-dark-height={darkScreenshot.height}
     data-light-src={lightScreenshot.src}
     data-light-alt={lightAlt}
+    data-light-width={lightScreenshot.width}
+    data-light-height={lightScreenshot.height}
+    data-configurator-src={configuratorScreenshot.src}
+    data-configurator-alt={configuratorAlt}
+    data-configurator-width={configuratorScreenshot.width}
+    data-configurator-height={configuratorScreenshot.height}
     src={lightScreenshot.src}
     width={lightScreenshot.width}
     height={lightScreenshot.height}
@@ -35,6 +46,8 @@ const lightAlt = 'A light getMando dashboard showing organized self-hosted appli
       const theme = button.dataset.theme;
       image.src = image.dataset[`${theme}Src`];
       image.alt = image.dataset[`${theme}Alt`];
+      image.width = image.dataset[`${theme}Width`];
+      image.height = image.dataset[`${theme}Height`];
       buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
     }));
   }
