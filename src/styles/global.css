@@ -29,6 +29,7 @@ h1, h2, h3, p { margin-top: 0; } h1 { font-size: clamp(2.5rem, 8vw, 5rem); max-w
 pre { overflow-x: auto; padding: 1rem; border-radius: .75rem; background: #030914; border: 1px solid #ffffff1f; color: #d5f035; }
 .release-card__version { color: #d5f035; font-weight: 800; font-size: 1.2rem; }
 .prose h2 { margin-top: 2rem; font-size: 1.5rem; letter-spacing: -.02em; } .prose p, .prose li { color: #cad8eb; }
+.prose img { display: block; width: 100%; height: auto; margin-block: 1.5rem; border: 1px solid #ffffff2e; border-radius: .8rem; box-shadow: 0 1.5rem 4rem #0008; }
 .release-detail h1 { max-width: none; }
 .releases-container { display: flex; align-items: center; gap: 1rem; flex-direction: column; }
 .config-sections { color: #cad8eb; padding-left: 1.25rem; }
