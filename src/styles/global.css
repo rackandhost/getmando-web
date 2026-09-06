@@ -21,6 +21,7 @@ h1, h2, h3, p { margin-top: 0; } h1 { font-size: clamp(2.5rem, 8vw, 5rem); max-w
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: 1.5rem; }
 .button { display: inline-flex; align-items: center; gap: .45rem; border-radius: .55rem; padding: .75rem 1rem; font-weight: 750; text-decoration: none; } .button svg, .icon-link svg { width: 1.1rem; height: 1.1rem; }
 .button--primary { background: #d5f035; color: #111b04; } .button--quiet { border: 1px solid #ffffff3d; } .text-link { color: #b5d8ff; font-weight: 700; }
+.coffee-button { display: inline-flex; border-radius: .55rem; } .coffee-button img { display: block; height: 2.75rem; width: auto; border-radius: .55rem; }
 .hero__image { display: block; width: 100%; height: auto; border: 1px solid #ffffff2e; border-radius: .8rem; box-shadow: 0 1.5rem 4rem #0008; }
 .theme-screenshot__controls { display: flex; gap: .5rem; justify-content: flex-end; margin-bottom: .75rem; } .theme-screenshot button { border: 1px solid #ffffff3d; border-radius: .45rem; background: transparent; color: inherit; cursor: pointer; padding: .4rem .7rem; } .theme-screenshot button[aria-pressed="true"] { background: #d5f035; color: #111b04; }
 .section { padding-block: 3.5rem; } .section + .section { border-top: 1px solid #ffffff1f; }

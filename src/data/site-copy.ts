@@ -2,6 +2,7 @@ export const siteCopy = {
   brand: 'getMando',
   repositoryUrl: 'https://github.com/rackandhost/getmando',
   documentationUrl: 'https://github.com/rackandhost/getmando#readme',
+  buyMeACoffeeUrl: 'https://www.buymeacoffee.com/rackandhost',
   landing: {
     title: 'A calmer home for your self-hosted apps',
     description:
