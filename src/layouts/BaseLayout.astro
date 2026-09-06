@@ -31,6 +31,11 @@ const spanishUrl = spanishPath ? new URL(spanishPath, Astro.site) : undefined;
     <link rel="alternate" hreflang="en" href={canonical} />
     {spanishUrl && <link rel="alternate" hreflang="es" href={spanishUrl} />}
     <link rel="alternate" hreflang="x-default" href={canonical} />
+    <script
+      is:inline
+      defer
+      data-domain="getmando.rackandhost.com"
+      src="https://plausible.omarsantos.es/js/script.hash.outbound-links.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>

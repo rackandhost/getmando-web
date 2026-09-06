@@ -5,7 +5,7 @@ import ThemeScreenshot from '../components/ThemeScreenshot.astro';
 import { siteCopy } from '../data/site-copy';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const { landing, documentationUrl, repositoryUrl } = siteCopy;
+const { landing, documentationUrl, repositoryUrl, buyMeACoffeeUrl } = siteCopy;
 ---
 
 <BaseLayout title={`${landing.title} | getMando`} description={landing.description} path="/">
@@ -17,6 +17,7 @@ const { landing, documentationUrl, repositoryUrl } = siteCopy;
       <div class="actions">
         <a class="button button--primary" href={documentationUrl} target="_blank" rel="noopener noreferrer" aria-label="Read documentation (opens in a new tab)"><Icon name="documentation" /><span>{landing.primaryAction}</span></a>
         <a class="button button--quiet" href={repositoryUrl} target="_blank" rel="noopener noreferrer" aria-label="View getMando on GitHub (opens in a new tab)"><Icon name="github" /><span>View on GitHub</span></a>
+        <a class="coffee-button" href={buyMeACoffeeUrl} target="_blank" rel="noopener noreferrer" aria-label="Buy Rack & Host a coffee (opens in a new tab)"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" width="217" height="60" loading="lazy" /></a>
       </div>
     </div>
     <ThemeScreenshot />
